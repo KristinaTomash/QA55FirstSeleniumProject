@@ -24,7 +24,7 @@ public class FirstSeleniumTest {
     }
 
 
-    @AfterMethod
+    @AfterMethod(enabled = false)
     public void tearDown(){
         driver.quit();
     }
