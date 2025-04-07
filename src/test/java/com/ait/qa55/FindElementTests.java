@@ -48,5 +48,33 @@ public class FindElementTests {
         //by className
         driver.findElement(By.className("header"));
         System.out.println(driver.findElement(By.className("header")).getText());
+        //by linkText
+        driver.findElement(By.linkText("Let the car work"));
+        //by partiaLinkText
+        driver.findElement(By.partialLinkText("car"));
+    }
+    @Test
+    public void findElementByCssSelector(){
+        //tagName == css
+        //driver.findElement(By.tagName("h1"));
+        driver.findElement(By.cssSelector("h1"));
+
+        //id-> css(#)
+        //driver.findElement(By.id("city"));
+        driver.findElement(By.cssSelector("#city"));
+
+        //by className->css(.)
+        //driver.findElement(By.className("header"));
+        driver.findElement(By.cssSelector(".header"));
+
+        //[attr='value']
+        driver.findElement(By.cssSelector("[href='/registration?url=%2Fsearch']"));
+        //contains ->*
+        driver.findElement(By.cssSelector("[href*='/registration']"));
+        //start->^
+        driver.findElement(By.cssSelector("[href^='/reg']"));
+        //end on->$
+        driver.findElement(By.cssSelector("[href$='search']"));
+
     }
 }
