@@ -75,6 +75,52 @@ public class FindElementTests {
         driver.findElement(By.cssSelector("[href^='/reg']"));
         //end on->$
         driver.findElement(By.cssSelector("[href$='search']"));
+        //tag+id
+        driver.findElement(By.cssSelector("input#city"));
+        //tag + class
+        driver.findElement(By.cssSelector("div.mobile-header"));
+        driver.findElement(By.cssSelector("div.search-card"));
+        //tag+id+[attr='value']
+        driver.findElement(By.cssSelector("input#city[type='text']"));
+
+
+    }
+    //     //*[@attr='value']
+
+    @Test
+    public void findElementByXpath(){
+        //tag ->xpath -> //tag
+        //driver.findElement(By.tagName("h1"));
+        driver.findElement(By.xpath("//h1"));
+        //id->xpath -> //*[@id='value']
+        //driver.findElement(By.id("city"));
+        driver.findElement(By.xpath("//input[@id='city']"));
+        //className-> //*[@class='value']
+        //driver.findElement(By.className("header"));
+        driver.findElement(By.xpath("//div[@class='header']"));
+        //contains-> //*[contains(.,'Text')]
+        driver.findElement(By.xpath("//h2[contains(.,'Yalla')]"));
+        //equal-> //*[text()='Text']
+        driver.findElement(By.xpath("//h2[text()='Type your data and hit Yalla!']"));
+        driver.findElement(By.xpath("//h2[.='Type your data and hit Yalla!']"));
+        //start-with->//*[starts-with(@attr,'StartText')]
+        driver.findElement(By.xpath("//label[starts-with(@for,'ci')]"));
+        //move up
+        driver.findElement(By.xpath("//a[@class='navigation-link']/.."));
+        //parent
+        driver.findElement(By.xpath("//h1/parent::*"));
+        driver.findElement(By.xpath("//h1/parent::div"));
+        driver.findElement(By.xpath("//h1/.."));
+        //ancestor
+        driver.findElement(By.xpath("//h1/ancestor::*"));//all
+        driver.findElement(By.xpath("//h1/ancestor::div"));//two options
+        driver.findElement(By.xpath("//h1/ancestor::div[2]"));//one options
+        //following-sibling
+        driver.findElement(By.xpath("//h1/following-sibling::form"));
+
+
+
+
 
     }
 }
