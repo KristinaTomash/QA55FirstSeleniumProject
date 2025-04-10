@@ -38,8 +38,6 @@ public class TableTests {
             //get last element
             WebElement canada = driver.findElement(By.cssSelector("tr:nth-child(8) td:last-child"));
             System.out.println(canada.getText());
-
-
         }
     }
 }
